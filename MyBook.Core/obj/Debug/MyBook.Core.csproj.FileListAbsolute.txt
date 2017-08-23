@@ -1,0 +1,5 @@
+C:\Users\Consumer Link\Documents\Visual Studio 2017\Projects\MyBook\MyBook.Core\bin\Debug\MyBook.Core.dll
+C:\Users\Consumer Link\Documents\Visual Studio 2017\Projects\MyBook\MyBook.Core\bin\Debug\MyBook.Core.pdb
+C:\Users\Consumer Link\Documents\Visual Studio 2017\Projects\MyBook\MyBook.Core\obj\Debug\MyBook.Core.csprojResolveAssemblyReference.cache
+C:\Users\Consumer Link\Documents\Visual Studio 2017\Projects\MyBook\MyBook.Core\obj\Debug\MyBook.Core.dll
+C:\Users\Consumer Link\Documents\Visual Studio 2017\Projects\MyBook\MyBook.Core\obj\Debug\MyBook.Core.pdb

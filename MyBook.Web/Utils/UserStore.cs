@@ -1,0 +1,85 @@
+﻿using Microsoft.AspNet.Identity;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Threading.Tasks;
+using MyBook.Web.Models;
+using MyBook.Core.Interface.Managers;
+
+namespace MyBook.Web.Utils
+{
+    public class UserStore : IUserStore<User, int>, IUserPasswordStore<User, int> IUserRoleStore<User, int>
+    {
+        private IAccountManager _account;
+
+        public UserStore(IAccountManager account)
+        {
+            _account = account;
+        }
+
+        public Task AddToRoleAsync(User user, string roleName)
+        {
+            throw new NotImplementedException();
+        }
+        public Task CreateAsync(User user)
+        {
+            return _account.CreateUser(user).AsTask();
+        }
+
+        public Task DeleteAsync(User user)
+        {
+            return _account.DeleteUser(user).AsTask();
+        }
+
+        public void Dispose()
+        {
+            
+        }
+
+        public Task<User> FindByIdAsync(int userId)
+        {
+            return _account.FindByID(userId).AsTask();
+        }
+
+        public Task<User> FindByNameAsync(string userName)
+        {
+            return _account.FindByEmail(userName).AsTask();
+        }
+
+        public Task<string> GetPasswordHashAsync(User user)
+        {
+            return _account.GetPasswordHash(user).AsTask();*
+        }
+
+        public Task<IList<string>> GetRolesAsync(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> HasPasswordAsync(User user)
+        {
+            return Task.FromResult(true);
+        }
+
+        public Task<bool> IsInRoleAsync(User user, string roleName)
+        {
+            return _account.IsUserInRole(user, roleName).AsTask();
+        }
+
+        public Task RemoveFromRoleAsync(User user, string roleName)
+        {
+            return _account.RemoveUserFromRole(user, roleName).AsTask();
+        }
+
+        public Task SetPasswordHashAsync(User user, string passwordHash)
+        {
+            return _account.SetPasswordHash(user, passwordHash).AsTask();
+        }
+
+        public Task UpdateAsync(User user)
+        {
+            return _account.UpdateUser(user).AsTask();
+        }
+    }
+}
